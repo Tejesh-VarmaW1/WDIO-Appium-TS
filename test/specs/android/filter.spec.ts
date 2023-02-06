@@ -4,7 +4,7 @@ import AndroidProductsScreen from "../../screenobjects/android/AndroidProducts.s
 import AndroidLoginScreen from "../../screenobjects/android/AndroidLogin.screen.ts";
 describe("TS test-2", () => {
   before(async () => {
-    await AndroidLoginScreen.login("standard_user", "secret_sauce");
+    await AndroidLoginScreen.login();
   });
   it("Filter by Name A to z", async () => {
     await AndroidProductsScreen.filterByNameA2Z();

@@ -1,7 +1,8 @@
 //@ts-ignore
 import AndroidLoginScreen from "../../screenobjects/android/AndroidLogin.screen.ts";
-describe("TS test-1", () => {
+describe("TS test", () => {
   it("Sauce demo login", async () => {
-    await AndroidLoginScreen.login("standard_user", "secret_sauce");
+    await AndroidLoginScreen.performLogin()
+    await AndroidLoginScreen.validateInvalidLogin()
   });
 });

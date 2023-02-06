@@ -5,7 +5,7 @@ import IosProductsScreen from "../../screenobjects/ios/IosProducts.screen.ts";
 
 describe("TS test-4", () => {
   before(async () => {
-    await IosLoginScreen.iosLogin("standard_user", "secret_sauce");
+    await IosLoginScreen.iosLogin();
   });
   it("Filter by : ", async () => {
     await IosProductsScreen.filterByNameAtoZ();

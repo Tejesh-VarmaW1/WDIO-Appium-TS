@@ -1,9 +1,8 @@
 //@ts-ignore
-import { config } from "./wdio.shared.conf.js";
-
+import { config } from "../wdio.shared.conf.ts";
 (config.specs = [
   // ToDo: define location for spec files here
-  "C:/Cigna/wdio-appium-ts/test/specs/android/filter.spec.ts",
+  "C:/Cigna/wdio-appium-ts/test/specs/android/login.spec.ts",
 ]),
   (config.capabilities = [
     {
@@ -11,6 +10,11 @@ import { config } from "./wdio.shared.conf.js";
       platformVersion: "12.0",
       deviceName: "Samsung Galaxy S22 Ultra",
       automationName: "UIAutomator2",
-      app: "",
+      app: "bs://9d285332cc5538647db53773150699d5b2f1a47b",
     },
   ]);
+
+  // const _config = config;
+  // export { _config as config}
+
+  exports.config = config

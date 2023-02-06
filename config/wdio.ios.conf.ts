@@ -1,5 +1,5 @@
 //@ts-ignore
-import { config } from "./wdio.shared.conf.js";
+import { config } from "../wdio.shared.conf.js";
 
 (config.specs = [
   // ToDo: define location for spec files here

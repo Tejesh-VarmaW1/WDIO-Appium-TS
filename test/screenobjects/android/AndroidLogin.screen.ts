@@ -1,3 +1,5 @@
+//@ts-ignore
+import AndroidProductsScreen from "./AndroidProducts.screen.ts";
 class AndroidLoginScreen {
   get usernameField() {
     return $("~test-Username");
@@ -11,10 +13,23 @@ class AndroidLoginScreen {
     return $("~test-LOGIN");
   }
 
-  async login(username: String, password: String): Promise<void> {
-    await this.usernameField.setValue(username);
-    await this.passwordField.setValue(password);
+  get errorMsg(){
+    return $("//*[@text=\"Username and password do not match any user in this service.\"]")
+  }
+  async performLogin(): Promise<void> {
+    await this.usernameField.setValue("stand_user");
+    await this.passwordField.setValue("secret");
     await this.loginBtn.click();
+  }
+
+  async validateLogin():Promise<void>{
+    await AndroidProductsScreen.productsText.isDisplayed()
+    console.log("successfully validated")
+  }
+
+  async validateInvalidLogin():Promise<void>{
+    await (await this.errorMsg).isDisplayed()
+    console.log("Login failed") 
   }
 }
 
